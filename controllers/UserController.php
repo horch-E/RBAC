@@ -11,7 +11,7 @@ class UserController extends BaseController{
 	//伪登陆业务方法
 	public function actionVlogin(){
 		$uid = $this->get("uid",0);
-		$reback_rul=UrlServices::buildUrl("/")
+		$reback_rul=UrlServices::buildUrl("/");
 		if(!$uid){
 			return $this->redirect($reback_rul);
 		}
@@ -23,9 +23,9 @@ class UserController extends BaseController{
 		$user_auth_token = md5($user_info['id'].$user_info['name'].$user_info['email'].$_SERVER['HTTP_USER_AGENT']);
 		$cookie_target=\Yii::$app->response->cookies;
 		$cookie_target->add( new \yii\web\Cookies([
-				"name"=>"imadagffgaf_888".,
+				"name"=>"imadagffgaf_888",
 				"value"=>$user_auth_token."#".$user_info['id']
-			])	)
+			])	);
 		return $this->redirect($reback_rul);
 	}
 

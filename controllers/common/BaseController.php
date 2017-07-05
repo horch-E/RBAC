@@ -1,6 +1,6 @@
 <?php
 /** Class BaseController...*/
-namespace app\controller\common;
+namespace app\controllers\common;
 use yii\web\Controller;
 
 //是以后所有控制器的基类，并且集成常用公用方法
